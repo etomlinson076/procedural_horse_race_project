@@ -1,44 +1,51 @@
 **Algorithm for horse race**
 
-Main();
-make an array for 5 horses 0-4
-make and set a variable to true
+int horses[5] = {0, 0, 0, 0, 0}
 
-horseNum = [0,1,2,3,4];
-horses = 
-track length = [.............];
+Main():
 
+seed random number generator
+create horses[5] startup to 0
+raceOver = false
 
-example function:
+while not raceOver:
+    for each horse 0..4:
+        advance(horse, horses)
+    for each horse 0..4:
+        printLane(horse, horses)
 
-while keepGoing:
-  run each horse through in a array
-  advance that horse
-  print the horses lane
-  if that horse won
-    set keepgoing to false
-  ask user for input for start next turn
+    
+    for each horse 0..4:
+        if isWinner(horse, horses):
+            print "Horse X wins!!"
+            raceOver = true
 
-advance();
-int horses
-if horses want to move roll a die between 0-1
-add something to track the horses position
+    if not raceOver:
+        print "Press enter for another turn"
+        wait for enter key
 
-
-printLane();
-print track length
-keep a token for how far each horse is in the track
-
-
-isWinner(); 
-make a result variable and make it false
-if the horses value is equal to the track length
-return result
 
 
  The functions I need to figure out after main
  void advance(int horseNum, int* horses);
  void printLane(int horseNum, int* horses);
  bool isWinner(int horseNum, int* horses);
+
+advance(int horseNum horses)
+flip a coin (0 or 1)
+if heads:
+    horses[horseNum]++
+
+printLane(int horseNum, horses)
+for i from 0 to 14:
+    if i == horses[horseNum]:
+        print horseNum
+    else:
+        print '.'
+print newline
+
+isWinner(horseNum, horses)
+return horses[horseNum] >= 14 # reach the last index of 15 char lane
+
 
 
