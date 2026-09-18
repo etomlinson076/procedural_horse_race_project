@@ -1,11 +1,10 @@
 **Algorithm for horse race**
 
-int horses[5] = {0, 0, 0, 0, 0}
 
 Main():
 
 seed random number generator
-create horses[5] startup to 0
+create horses[5] startup to 0 // int horses[5] = {0, 0, 0, 0, 0}
 raceOver = false
 
 while not raceOver:
