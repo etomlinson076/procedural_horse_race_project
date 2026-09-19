@@ -10,14 +10,20 @@ raceOver = false
 while not raceOver:
     for each horse 0..4:
         advance(horse, horses)
+
+
     for each horse 0..4:
-        printLane(horse, horses)
+        if isWinner(horse, horses);
+            raceOver = true
+            winner = horse
+            break
 
     
     for each horse 0..4:
-        if isWinner(horse, horses):
-            print "Horse X wins!!"
-            raceOver = true
+        if raceOver and horse == winner
+            print "Horse " + horse + " WINS!!!"
+        else
+            printLane(horse, horses)
 
     if not raceOver:
         print "Press enter for another turn"
